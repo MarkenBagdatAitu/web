@@ -1,0 +1,24 @@
+var year = today.getFullYear();
+var day = today.getDay();
+var date = today.getDate();
+var month = today.getMonth();
+
+document.querySelector(".Year").innerHTML = "Year: " + year;
+
+var dayList = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+var monthList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+document.querySelector(".Day").innerHTML = "Today is : " + dayList[day - 1];
+document.querySelector(".Date").innerHTML = "Date: " + date;
+document.querySelector(".Month").innerHTML = "Month : " + monthList[month];
+
+var hour = zerO(today.getHours());
+var minute = zerO(today.getMinutes());
+var seconds = zerO(today.getSeconds());
+
+function zerO(num) {
+  return num < 10 ? `0${num}` : num;
+}
+
+document.querySelector(".Time").innerHTML = "Current time is : " + hour + ":" + minute + ":" + seconds;
+console.log("Current time is : " + hour + " : " + minute + " : " + seconds);
